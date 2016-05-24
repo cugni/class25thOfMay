@@ -117,7 +117,7 @@ Let's create and start a 3 nodes cluster
 ccm create test -v 3.5.0 -n 3 -s
 ccm node1 status # nodetool status on nodeone
 ```
-Now we can create again the a keyspace, but this time with replication factor 2
+Now we can create again the keyspace, but this time with replication factor 2
 ```bash
 ccm node1 cqlsh
 ```
@@ -127,7 +127,7 @@ USE tensorsparKkandra;
 CREATE TABLE ..
 ```
 
-Modifying the previous python code you can generate a random workload on the nodes. In the meantime, you can use jconsole for looking at the cluster behavior. For instance, you can look into the  MBeans tab at the metric *org.apache.cassandra.metrics.ClientRequest.Read* for seeing how the load distributes between nodes. One tip: double clicking on the metrics opens a graph over the time. 
+By modifying the previous python code you can generate a random workload on the nodes. In the meantime, you can use jconsole to look at the cluster behavior. For instance, you can look into the  MBeans tab at the metric *org.apache.cassandra.metrics.ClientRequest.Read* to see how the load distributes between nodes. One tip: double clicking on the metrics opens a graph of the value changing over the time. 
 
 ```bash
 ccm jconsole # Starts a jconsole for each node. 
